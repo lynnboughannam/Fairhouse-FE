@@ -1,0 +1,20 @@
+<label form="location-search"> Search a new Place</label>
+<input id="location-search" #search placeholder="Ex: Chicago">
+<button (click)="searchHousingLocations(search.value)">Search</button>
+
+<article *ngFor="let location of results">
+    <img [src]="location.photo" [alt]="location.name">
+    <p>{{location.name}}</p>
+    <p>{{location.city}}, {{location.state}}</p>
+    <button (click)="selectHousingLocation(location)">View</button>
+    <!--Now update the component-->
+</article>
+<!--
+    we can search by location
+    to do: implement the details when clicked\
+        -> housing-list component knows which detail was clicked
+         need a way to share data from the child component to the parent component
+        input decorator to share data from parents to the child
+        output decorator and event emitter to share from the child to the parent 
+
+    -->
